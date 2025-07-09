@@ -31,7 +31,7 @@ This is a **Rasa-based conversational chatbot** designed to assist users with sh
 ├── endpoints.yml             # Action server + other services
 ├── config.yml                # NLU pipeline and policies
 ├── README.md                 # This file
-└── rasa_chatbot_frontend     # Front-end chat folder (Credits:)
+└── rasa_chatbot_frontend     # Front-end chat folder (Credits: https://github.com/JiteshGaikwad/Chatbot-Widget.git)
 └── requirements.txt          # requirements.txt
 └── Project Report-Aditya K   # Project Report 
 
