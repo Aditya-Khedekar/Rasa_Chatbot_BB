@@ -1,0 +1,189 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+
+  - intent: track_shipment
+    examples: |
+      - Where is my package?
+      - Track my order
+      - Track order
+      - Can you tell me the shipment status?
+      - I want to know where my parcel is
+
+  - intent: offers
+    examples: |
+      - i would like to see offers
+      - show offers
+      - offers
+      - what offers do you have.
+
+  - intent: provide_tracking_id
+    examples: |
+      - [123456789](tracking_id)
+      - [987654321](tracking_id)
+      - [112233445](tracking_id)
+      - [554433221](tracking_id)
+      - [778855446](tracking_id)
+      - [187547875](tracking_id)
+      - my tracking id is [123456789](tracking_id)
+      - the id is [987654321](tracking_id)
+      - it's [112233445](tracking_id)
+      - here you go [554433221](tracking_id)
+      - [778855446](tracking_id)
+      - ok, the number is [187547875](tracking_id)
+
+  - regex: tracking_id
+    examples: |
+      - \d{9}
+
+  - intent: estimate_delivery
+    examples: |
+      - When will my order arrive?
+      - What is the estimated delivery date?
+      - Will my package arrive today?
+      - How long will the shipment take?
+
+  - intent: change_address
+    examples: |
+      - I want to change my delivery address
+      - Can I update my address?
+      - Change my shipping location
+      - I entered the wrong address
+
+  - intent: give_rating
+    examples: |
+      - I give it [5](rating) stars
+      - [4](rating) stars
+      - I’d rate it [3](rating)
+      - Give [2](rating)
+      - It's a [1](rating) for me
+
+  - intent: provide_source_address
+    examples: |
+      - [400001](source_address)
+      - [560034](source_address)
+      - [700098](source_address)
+      - [122011](source_address)
+      - [110001](source_address)
+
+  - intent: provide_dest_address
+    examples: |
+      - [600001](dest_address)
+      - [500081](dest_address)
+      - [421203](dest_address)
+      - [302002](dest_address)
+      - [123456](dest_address)
+
+  - intent: summarize_chat
+    examples: |
+      - summarize chat
+      - make a summary of our chat
+      - tell me in short what we discussed
+      - summary
+      - summarize
+
+  # - intent: report_issue
+  #   examples: |
+  #     - My delivery is late
+  #     - I didn't receive my package
+  #     - There's a problem with my order
+  #     - I have an issue with my shipment
+  #     - My parcel is missing
+  #     - The tracking info is not updating
+  #     - My order hasn't arrived
+  #     - Something is wrong with my delivery
+  #     - My package was delivered to the wrong address
+  #     - I'm facing a delivery problem
+  #     - I think my parcel is lost
+  #     - The shipment is stuck
+  #     - My order got delayed
+  #     - My tracking is showing the same status for days
+  #     - I need help with a delivery issue
+  #     - The package hasn’t moved
+  #     - It’s past the delivery date and I haven’t received anything
+  #     - The item never showed up
+  #     - I think my package is stolen
+  #     - What should I do if my order is not delivered?
+
+  # - intent: return_or_refund
+  #   examples: |
+  #     - I want to return my product
+  #     - How do I request a refund?
+  #     - Start a return
+  #     - Can I return my item?
+  #     - I'd like a refund
+  #     - The item is damaged, I want to send it back
+  #     - I need to return my purchase
+  #     - How can I return this?
+  #     - The product was wrong, I want a refund
+  #     - Initiate return process
+  #     - I want my money back
+  #     - Return the package
+  #     - I don’t want this item
+  #     - Please start a refund request
+  #     - I want to send the item back
+  #     - The order is faulty, I want to return it
+  #     - Help me with a return
+  #     - Refund the payment
+  #     - How to return a damaged product?
+  #     - I got the wrong product, return it
+
+  # - intent: provide_new_addresses
+  #   examples: |
+  #     - Change source to [700001](source_address) and destination to [800001](dest_address)
+  #     - Move from [560001](source_address) to [570002](dest_address)
+  #     - I'd like to update source address to [122001](source_address) and destination to [110022](dest_address)
+  #     - Set source as [400001](source_address) and destination as [421203](dest_address)
+  #     - Pickup from [301001](source_address), drop at [302002](dest_address)
+  #     - Please deliver from [500090](source_address) to [500081](dest_address)
+  #     - Start from [300001](source_address) and end at [300045](dest_address)
+  #     - Collect at [600033](source_address), ship to [600058](dest_address)
+  #     - My new source pincode is [123456](source_address) and destination is [654321](dest_address)
+  #     - Replace addresses with source: [111111](source_address), destination: [999999](dest_address)

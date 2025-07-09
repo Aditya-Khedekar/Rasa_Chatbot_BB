@@ -1,0 +1,39 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_lookup_shipment_status\"}}]": "utter_anything_else",
+      "[{\"prev_action\": {\"action_name\": \"action_lookup_shipment_status\"}}, {\"prev_action\": {\"action_name\": \"utter_anything_else\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_change_address\"}}]": "utter_anything_else",
+      "[{\"prev_action\": {\"action_name\": \"action_change_address\"}}, {\"prev_action\": {\"action_name\": \"utter_anything_else\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]": "utter_nlu_fallback",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}, {\"prev_action\": {\"action_name\": \"utter_nlu_fallback\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"give_rating\"}}]": "action_handle_star_rating",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"give_rating\"}}, {\"prev_action\": {\"action_name\": \"action_handle_star_rating\"}, \"user\": {\"intent\": \"give_rating\"}}]": "utter_goodbye",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"give_rating\"}}, {\"prev_action\": {\"action_name\": \"action_handle_star_rating\"}, \"user\": {\"intent\": \"give_rating\"}}, {\"prev_action\": {\"action_name\": \"utter_goodbye\"}, \"user\": {\"intent\": \"give_rating\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"offers\"}}]": "utter_show_offers",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"offers\"}}, {\"prev_action\": {\"action_name\": \"utter_show_offers\"}, \"user\": {\"intent\": \"offers\"}}]": "action_listen",
+      "[{}]": "action_listen",
+      "[{}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}]": "utter_greet",
+      "[{}, {\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}, {\"prev_action\": {\"action_name\": \"utter_greet\"}, \"user\": {\"intent\": \"greet\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_estimate_delivery\"}}]": "utter_anything_else",
+      "[{\"prev_action\": {\"action_name\": \"action_estimate_delivery\"}}, {\"prev_action\": {\"action_name\": \"utter_anything_else\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent session_start",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"offers\"}}, {\"prev_action\": {\"action_name\": \"utter_show_offers\"}, \"user\": {\"intent\": \"offers\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"give_rating\"}}]",
+      "handling active loops and forms - tracking_form - action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"give_rating\"}}, {\"prev_action\": {\"action_name\": \"action_handle_star_rating\"}, \"user\": {\"intent\": \"give_rating\"}}]",
+      "predicting default action with intent back",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}, {\"prev_action\": {\"action_name\": \"utter_nlu_fallback\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"nlu_fallback\"}}]",
+      "predicting default action with intent restart",
+      "handling active loops and forms - tracking_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"give_rating\"}}, {\"prev_action\": {\"action_name\": \"action_handle_star_rating\"}, \"user\": {\"intent\": \"give_rating\"}}, {\"prev_action\": {\"action_name\": \"utter_goodbye\"}, \"user\": {\"intent\": \"give_rating\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"offers\"}}]"
+    ]
+  }
+}

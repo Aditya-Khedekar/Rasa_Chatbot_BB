@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-dest_address",
+      "2": "I-dest_address",
+      "3": "L-dest_address",
+      "4": "U-dest_address",
+      "5": "B-rating",
+      "6": "I-rating",
+      "7": "L-rating",
+      "8": "U-rating",
+      "9": "B-source_address",
+      "10": "I-source_address",
+      "11": "L-source_address",
+      "12": "U-source_address",
+      "13": "B-tracking_id",
+      "14": "I-tracking_id",
+      "15": "L-tracking_id",
+      "16": "U-tracking_id",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-dest_address": 1,
+      "I-dest_address": 2,
+      "L-dest_address": 3,
+      "U-dest_address": 4,
+      "B-rating": 5,
+      "I-rating": 6,
+      "L-rating": 7,
+      "U-rating": 8,
+      "B-source_address": 9,
+      "I-source_address": 10,
+      "L-source_address": 11,
+      "U-source_address": 12,
+      "B-tracking_id": 13,
+      "I-tracking_id": 14,
+      "L-tracking_id": 15,
+      "U-tracking_id": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]

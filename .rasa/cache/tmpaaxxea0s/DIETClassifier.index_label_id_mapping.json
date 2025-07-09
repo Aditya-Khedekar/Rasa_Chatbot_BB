@@ -1,0 +1,15 @@
+{
+  "0": "affirm",
+  "1": "change_address",
+  "2": "deny",
+  "3": "estimate_delivery",
+  "4": "give_rating",
+  "5": "goodbye",
+  "6": "greet",
+  "7": "offers",
+  "8": "provide_dest_address",
+  "9": "provide_source_address",
+  "10": "provide_tracking_id",
+  "11": "summarize_chat",
+  "12": "track_shipment"
+}

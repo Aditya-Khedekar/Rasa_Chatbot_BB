@@ -1,0 +1,52 @@
+version: "3.1"
+
+rules:
+  - rule: welcome user
+    conversation_start: true
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: rating experience
+    steps:
+      - intent: give_rating
+      - action: action_handle_star_rating
+      - action: utter_goodbye
+      - action: action_log_rating
+      - action: action_summarize_chat
+
+  - rule: After shipment lookup
+    steps:
+      - action: action_lookup_shipment_status
+      - action: utter_anything_else
+
+  - rule: After estimating delivery time
+    steps:
+      - action: action_estimate_delivery
+      - action: utter_anything_else
+
+  - rule: After Address change
+    steps:
+      - action: action_change_address
+      - action: utter_anything_else
+
+  - rule: after user selects no
+    steps:
+      - intent: deny
+      - action: utter_request_rating
+
+  - rule: facing default response.
+    steps:
+      - intent: nlu_fallback
+      - action: utter_nlu_fallback
+
+  - rule: show offers
+    steps:
+      - intent: offers
+      - action: utter_show_offers
+      - action: utter_anything_else
+
+  - rule: summarize chat
+    steps:
+      - intent: summarize_chat
+      - action: action_summarize_chat

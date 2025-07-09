@@ -1,0 +1,54 @@
+{
+  "type": "IntentMaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "affirm": 0,
+        "back": 1,
+        "bot_challenge": 2,
+        "deny": 3,
+        "estimate_delivery": 4,
+        "goodbye": 5,
+        "greet": 6,
+        "mood_great": 7,
+        "mood_unhappy": 8,
+        "nlu_fallback": 9,
+        "out_of_scope": 10,
+        "provide_tracking_id": 11,
+        "restart": 12,
+        "session_start": 13,
+        "track_shipment": 14
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "action_lookup_shipment_status": 13,
+        "action_estimate_delivery": 14,
+        "utter_anything_else": 15,
+        "utter_ask_tracking_id": 16,
+        "utter_goodbye": 17,
+        "utter_greet": 18
+      },
+      "entities": {
+        "tracking_id": 0
+      },
+      "slots": {},
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

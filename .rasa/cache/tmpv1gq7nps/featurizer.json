@@ -1,0 +1,79 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "affirm": 0,
+        "back": 1,
+        "bot_challenge": 2,
+        "change_address": 3,
+        "deny": 4,
+        "estimate_delivery": 5,
+        "give_rating": 6,
+        "goodbye": 7,
+        "greet": 8,
+        "mood_great": 9,
+        "mood_unhappy": 10,
+        "nlu_fallback": 11,
+        "offers": 12,
+        "out_of_scope": 13,
+        "provide_new_addresses": 14,
+        "provide_tracking_id": 15,
+        "restart": 16,
+        "session_start": 17,
+        "summarize_chat": 18,
+        "track_shipment": 19
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "validate_tracking_form": 13,
+        "action_lookup_shipment_status": 14,
+        "action_estimate_delivery": 15,
+        "action_change_address": 16,
+        "action_handle_star_rating": 17,
+        "action_log_rating": 18,
+        "action_summarize_chat": 19,
+        "utter_anything_else": 20,
+        "utter_ask_new_addresses": 21,
+        "utter_ask_tracking_id": 22,
+        "utter_goodbye": 23,
+        "utter_greet": 24,
+        "utter_invalid_tracking_id": 25,
+        "utter_nlu_fallback": 26,
+        "utter_request_rating": 27,
+        "utter_show_offers": 28,
+        "tracking_form": 29,
+        "address_form": 30
+      },
+      "entities": {
+        "dest_address": 0,
+        "rating": 1,
+        "source_address": 2,
+        "tracking_id": 3
+      },
+      "slots": {
+        "tracking_id_0": 0
+      },
+      "active_loop": {
+        "tracking_form": 0,
+        "address_form": 1
+      }
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 10
+}

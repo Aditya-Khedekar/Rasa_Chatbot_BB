@@ -1,0 +1,141 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - track_shipment
+  - estimate_delivery
+  - change_address
+  - provide_tracking_id
+  - give_rating
+  - offers
+  - summarize_chat
+  - provide_source_address
+  - provide_dest_address
+
+entities:
+  - tracking_id
+  - source_address
+  - dest_address
+  - rating
+
+slots:
+  tracking_id:
+    type: text
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: tracking_form
+            requested_slot: tracking_id
+
+  source_address:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: address_form
+            requested_slot: source_address
+
+  dest_address:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: address_form
+            requested_slot: dest_address
+
+  rating:
+    type: float
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: rating
+
+forms:
+  tracking_form:
+    required_slots:
+      - tracking_id
+  address_form:
+    required_slots:
+      - source_address
+      - dest_address
+
+responses:
+  utter_greet:
+    - text: "What would you like to do?"
+      buttons:
+        - title: "📦 Track Shipment"
+          payload: "/track_shipment"
+        - title: "📅 Estimate Delivery"
+          payload: "/estimate_delivery"
+        - title: "🏡 Change Address"
+          payload: "/change_address"
+        - title: "🎁 Offers"
+          payload: "/offers"
+
+  utter_goodbye:
+    - text: "Goodbye! Let me know if you need anything else."
+
+  utter_ask_tracking_id:
+    - text: "Please provide the tracking ID for your shipment."
+
+  # utter_ask_new_addresses:
+  #   - text: "Please provide the new source and destination PIN codes."
+
+  utter_ask_source_address:
+    - text: "Please provide source pincode."
+
+  utter_ask_dest_address:
+    - text: "Please provide destination pincode."
+
+  utter_anything_else:
+    - text: "Is there anything else I can help you with today?"
+      buttons:
+        - title: "Yes, Take me to Home"
+          payload: "/greet"
+        - title: "No, Take me to Feedback"
+          payload: "/deny"
+
+  utter_request_rating:
+    - text: "We request a moment of your time to rate our service"
+
+  utter_invalid_tracking_id:
+    - text: That doesn't look like a valid tracking ID. Please enter a 9-digit number.
+
+  utter_nlu_fallback:
+    - text: Fallback Situation
+
+  utter_show_offers:
+    - text: "Here are some offers you might like:"
+      custom:
+        payload: cardsCarousel
+        data:
+          - image: https://www.netmeds.com/images/cms/offers/1719829592_Web_Landing_Banner.jpg
+            name: Zero Shipping Charge
+            title: ad1
+            url: https://www.netmeds.com
+          - image: https://www.netmeds.com/images/cms/offers/1720101341_Mob_Landing.jpg
+            name: Free Delivery
+            title: ad2
+            url: https://www.netmeds.com
+          - image: https://img.freepik.com/premium-vector/free-shipping-special-offer-label-sale-sticker-white_419341-458.jpg
+            name: Free Shipping
+            title: ad3
+            url: https://www.freepik.com
+
+actions:
+  - validate_tracking_form
+  - validate_address_form
+  - action_lookup_shipment_status
+  - action_estimate_delivery
+  - action_change_address
+  - action_handle_star_rating
+  - action_log_rating
+  - action_summarize_chat

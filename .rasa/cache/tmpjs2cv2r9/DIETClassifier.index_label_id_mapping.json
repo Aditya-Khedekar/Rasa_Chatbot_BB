@@ -1,0 +1,12 @@
+{
+  "0": "affirm",
+  "1": "change_address",
+  "2": "deny",
+  "3": "estimate_delivery",
+  "4": "give_rating",
+  "5": "goodbye",
+  "6": "greet",
+  "7": "provide_new_addresses",
+  "8": "provide_tracking_id",
+  "9": "track_shipment"
+}

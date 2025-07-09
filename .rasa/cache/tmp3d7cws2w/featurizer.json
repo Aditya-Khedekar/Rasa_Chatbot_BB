@@ -1,0 +1,60 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "affirm": 0,
+        "back": 1,
+        "bot_challenge": 2,
+        "change_address": 3,
+        "deny": 4,
+        "estimate_delivery": 5,
+        "goodbye": 6,
+        "greet": 7,
+        "mood_great": 8,
+        "mood_unhappy": 9,
+        "nlu_fallback": 10,
+        "out_of_scope": 11,
+        "provide_new_addresses": 12,
+        "provide_tracking_id": 13,
+        "restart": 14,
+        "session_start": 15,
+        "track_shipment": 16
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "action_lookup_shipment_status": 13,
+        "action_estimate_delivery": 14,
+        "action_change_address": 15,
+        "utter_anything_else": 16,
+        "utter_ask_new_addresses": 17,
+        "utter_ask_tracking_id": 18,
+        "utter_goodbye": 19,
+        "utter_greet": 20
+      },
+      "entities": {
+        "dest_address": 0,
+        "source_address": 1,
+        "tracking_id": 2
+      },
+      "slots": {},
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 10
+}

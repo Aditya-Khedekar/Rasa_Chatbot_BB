@@ -1,0 +1,4 @@
+timestamp,user_id,rating,summary,sentiment
+2025-07-08 16:24:08,544e3892-b013-4138-8db3-8c4e57c6b11d,4," The conversation starts with the bot asking what the user wants to do, then offers some options, asks if there's anything else it can help with, and finally requests a rating after being denied. The user gives a 4-star rating and thanks the bot before leaving. ", Neutral
+2025-07-09 15:40:02,70d19d12-0bc5-47fd-a6de-e6629c3800a9,3," The user interacted with the chatbot, asking for offers, tracking shipment information, and denied to rate it again.  ", Neutral
+2025-07-09 16:16:39,b7f2d7a7-1b99-4b91-8876-565d54526145,4," The user interacted with the chatbot to track a shipment, update its address, and provide ratings for the service.  ", Neutral

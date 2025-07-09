@@ -1,0 +1,12 @@
+{
+  "0": "affirm",
+  "1": "change_address",
+  "2": "deny",
+  "3": "estimate_delivery",
+  "4": "goodbye",
+  "5": "greet",
+  "6": "provide_tracking_id",
+  "7": "report_issue",
+  "8": "return_or_refund",
+  "9": "track_shipment"
+}

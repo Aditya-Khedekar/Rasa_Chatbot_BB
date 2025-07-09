@@ -1,0 +1,76 @@
+version: "3.1"
+
+stories:
+  - story: Happy path for shipment tracking (with greeting)
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: track_shipment
+      - action: tracking_form
+      - active_loop: tracking_form
+      - slot_was_set:
+          - tracking_id: "123456789"
+      - active_loop: null
+      - action: action_lookup_shipment_status
+      - action: utter_anything_else
+      - intent: deny
+      - action: utter_request_rating
+
+  - story: Happy path for delivery estimate with greeting
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: estimate_delivery
+      - action: tracking_form
+      - active_loop: tracking_form
+      - slot_was_set:
+          - tracking_id: "123454321"
+      - active_loop: null
+      - action: action_estimate_delivery
+      - action: utter_anything_else
+      - intent: deny
+      - action: utter_request_rating
+
+  # - story: Change address full flow
+  #   steps:
+  #   - intent: greet
+  #   - action: utter_greet
+  #   - intent: change_address
+  #   - action: tracking_form
+  #   - active_loop: tracking_form
+  #   - slot_was_set:
+  #       - tracking_id: "123456789"
+  #   - active_loop: null
+  #   - action: utter_ask_new_addresses
+  #   - intent: provide_new_addresses
+  #     entities:
+  #       - source_address: "500001"
+  #       - dest_address: "500009"
+  #   - slot_was_set:
+  #       - source_address: "500001"
+  #       - dest_address: "500009"
+  #   - action: action_change_address
+  #   - action: utter_anything_else
+  #   - intent: deny
+  #   - action: utter_request_rating
+
+  - story: Change address full flow
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: change_address
+      - action: tracking_form
+      - active_loop: tracking_form
+      - slot_was_set:
+          - tracking_id: "123456789"
+      - active_loop: null
+      - action: address_form
+      - active_loop: address_form
+      - slot_was_set:
+          - source_address: "500001"
+          - dest_address: "500009"
+      - active_loop: null
+      - action: action_change_address
+      - action: utter_anything_else
+      - intent: deny
+      - action: utter_request_rating
