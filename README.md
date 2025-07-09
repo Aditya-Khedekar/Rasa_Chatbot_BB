@@ -4,7 +4,7 @@ This is a **Rasa-based conversational chatbot** designed to assist users with sh
 
 ---
 
-## ✨ Features
+## Features
 - Track shipment using Tracking ID
 - Change source and destination pincodes
 - Get estimated delivery date
@@ -15,41 +15,40 @@ This is a **Rasa-based conversational chatbot** designed to assist users with sh
 
 ---
 
-## ♻ Project Structure
+## Project Structure
 ```
 .
 ├── actions/                  # Custom backend logic (Python)
 │   └── actions.py            
 ├── data/                     # Rules and stories for conversation
 │   ├── rules.yml             
-│   └── stories.yml           
-├── models/                   # Trained Rasa models (auto-generated)
-├── static/                   # Front-end static assets (images etc.)
-├── templates/                # Front-end HTML
-│   └── index.html            
-├── ratings_log.csv           # CSV mock database of ratings
+│   └── stories.yml
+├   └──nlu.yml                # Training data (intents and entities)
+├── models/                   # Trained Rasa models (auto-generated)      
+├── ratings_log.csv           # CSV mock log database of ratings, summary and sentiments
 ├── credentials.yml           # Channels configuration
 ├── domain.yml                # All intents, slots, entities, responses etc.
 ├── endpoints.yml             # Action server + other services
-├── nlu.yml                   # Training data (intents and entities)
 ├── config.yml                # NLU pipeline and policies
 ├── README.md                 # This file
-└── chat.js                   # Front-end chat logic
+└── rasa_chatbot_frontend     # Front-end chat folder (Credits:)
+└── requirements.txt          # requirements.txt
+└── Project Report-Aditya K   # Project Report 
+
 ```
 
 ---
 
-## ⚖️ Prerequisites
+## Prerequisites
 
-- Python 3.8 or above
+- Python 3.8 or above(3.10 on Windows recommended and 3.9 on macOS)
 - [Rasa Open Source](https://rasa.com/docs/rasa/installation/)
-- Node.js (for running front-end if needed)
 - Git
 - Optional: [Ollama](https://ollama.com) (to host LLaMA model locally)
 
 ---
 
-## 📚 Setup Instructions
+## Setup Instructions
 
 ### 1. Clone this Repository
 ```bash
@@ -68,14 +67,14 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-If `requirements.txt` is not available, install manually:
+If some dependencies are not in `requirements.txt` is not available, install manually:
 ```bash
 pip install rasa pandas requests
 ```
 
 ---
 
-## ⚙️ Rasa Bot Setup
+## Rasa Bot Setup
 
 ### 1. Train the Bot
 ```bash
@@ -94,20 +93,14 @@ rasa run --enable-api --cors "*" --debug
 
 ---
 
-## 🌐 Running the Front-End
+## Running the Front-End
 
-Simply open `templates/index.html` in your browser.
+Simply open `rasa_chatbot_frontend/index.html` in your browser or host it on Apache Tomcat.
 Make sure the Rasa server is running at `http://localhost:5005` and the action server at `http://localhost:5055`.
-
-If the chat window doesn’t render properly, you may need to serve the folder using a local HTTP server like:
-```bash
-python -m http.server 8080
-```
-Then open `http://localhost:8080/templates/index.html`
 
 ---
 
-## 📂 What Each File Does
+## What Each File Does
 
 | File | Description |
 |------|-------------|
@@ -119,50 +112,49 @@ Then open `http://localhost:8080/templates/index.html`
 | `endpoints.yml` | Action server + optional model server endpoints |
 | `actions.py` | All custom backend logic (form validations, API call mocks, summary generation etc.) |
 | `ratings_log.csv` | Stores feedback entries from users |
-| `chat.js` | Handles frontend rendering, sending/receiving messages, star rating, markdown etc. |
 
 ---
 
-## 🔍 Special Features Implemented
+## Special Features Implemented
 
-- **Form Validation**: Tracking ID must be 9 digits and present in DB. Pincodes must be 6-digit numbers.
+- **Form Validation**: Tracking ID is of 9 digits and present in DB. Pincodes must be 6-digit numbers.
 - **Button-Based Inputs**: Reduces ambiguity and improves flow.
 - **Feedback Collection**: Ratings from 1 to 5 stars stored in `ratings_log.csv`
-- **Chat Summary**: Uses LLaMA3.2 via local Ollama server for generating text summary and sentiment.
+- **Chat Summary**: Uses LLaMA3.2 via local Ollama server for generating text summary and sentiment and stored in rating_log.csv.
 
 ---
 
-## 🌀 Example Flow
+## Example Flow
 1. User greets the bot.
 2. Selects "Track Shipment".
 3. Bot asks for Tracking ID and validates it.
 4. Bot shows current status.
 5. Bot asks if anything else is needed.
-6. User gives feedback using star rating.
-7. Chat summary and sentiment is shown.
+6. User responds "No"
+7. User gives feedback using star rating.
+8. Chat summary and sentiment is recorded.
 
 ---
 
-## ⚠️ Troubleshooting
+## Troubleshooting
 - **Empty summary output**: Check if `ratings_log.csv` has at least one complete row.
 - **No bot response**: Ensure both Rasa and action server are running.
 - **Star rating doesn’t submit**: Check JavaScript errors in browser console.
 
 ---
 
-## 🌐 Credits
+## Credits
 Developed during internship at **Black Box Navi Mumbai** (June 2025 - July 2025).
 Built using open-source technologies: **Rasa**, **Ollama**, **HTML/CSS/JS**.
 
 ---
 
-## 📅 Future Improvements
+## Future Improvements
 - Connect to live shipment database/API
-- Integrate WhatsApp/Telegram as front-end
 - Improve fallback and ambiguous intent handling
 - Multilingual support
 
 ---
 
-## ✅ License
+## License
 This project is released under the MIT License. Feel free to fork and improve it!
