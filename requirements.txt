@@ -1,0 +1,4 @@
+rasa==3.6.12
+rasa-sdk==3.6.1
+pandas>=1.3.0
+requests>=2.25.1
